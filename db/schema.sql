@@ -1,0 +1,13 @@
+CREATE DATABASE honey_db;
+USE honey_db;
+
+CREATE TABLE honeys
+(
+	id int NOT NULL AUTO_INCREMENT,
+	request varchar(255) NOT NULL,
+	priority INTEGER NOT NULL,
+	complete BOOLEAN DEFAULT false,
+	duedate INTEGER NOT NULL,
+	date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id)
+);

@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4">
+    <div class="text-center" id="img-pad">
+      <img src="/assets/img/beehive.gif" id="image" alt="honeyimage">
+    </div>
+    <div>
+      <h3 class="text-center" id="honey-title">The 'Honey, Please!' List</h3>
+    </div>
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div>
+      <h4 class="text-center">Current Honeys</h4>
+
+      <ul>
+        {{#each honeys}}
+          {{#unless this.devoured}}
+            <p> Task #{{this.id}}. Honey, you need to {{this.request}}, it's #{{this.priority}} on the priority list!
+              <input type="hidden" name="id"
+              value="{{this.id}}">
+              <button type = "submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-ok"> </span></button>
+            </p>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+      <div class="text-center">
+        <h4>Completed Honeys</h4>
+        <ul>
+            {{#each honeys}}
+              {{#if this.devoured}}
+                  <p> Task #{{this.id}}. Your Honey fished doing the {{this.request}}, be sure to reward them!</p>
+                  <button type = "submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"> </span></button>
+              {{/if}}
+            {{/each}}
+        </ul>
+      </div>
+  </div>
+<div class="row">
+  <div class="col-lg-12">
+  </div>
+</div>
